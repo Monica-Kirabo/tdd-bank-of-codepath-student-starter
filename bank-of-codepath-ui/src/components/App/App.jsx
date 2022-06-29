@@ -9,6 +9,7 @@ import { useState } from "react";
 export default function App() {
   const [isloading, setIsloading] = useState(false);
   const [transactions, setTransactions] = useState([]);
+  const [transfers, setTransfers] = useState([]);
   const [error, setError] = useState([]);
 
   const [filterInputValue, setFilterInputValue] = useState("");
@@ -21,7 +22,22 @@ export default function App() {
         />
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route
+              path="/"
+              element={
+                <Home
+                  transactions={transactions}
+                  setTransactions={setTransactions}
+                  transfers={transfers}
+                  setTransfers={setTransfers}
+                  error={error}
+                  setError={setError}
+                  isloading={isloading}
+                  setIsloading={setIsloading}
+                  filterInputValue={filterInputValue}
+                />
+              }
+            />
             <Route
               path="/transactions/:transactionId"
               element={<TransactionDetail />}
