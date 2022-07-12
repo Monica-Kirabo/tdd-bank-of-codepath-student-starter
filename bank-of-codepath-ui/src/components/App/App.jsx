@@ -7,12 +7,18 @@ import "./App.css";
 import { useState } from "react";
 
 export default function App() {
-  const [isloading, setIsloading] = useState(false);
+  const [isloading, setIsLoading] = useState(false);
   const [transactions, setTransactions] = useState([]);
   const [transfers, setTransfers] = useState([]);
   const [error, setError] = useState([]);
 
   const [filterInputValue, setFilterInputValue] = useState("");
+  const [newTransactionForm, setNewTransactionForm] = useState({
+    category: "",
+    description: "",
+    amount: 0,
+  });
+  const [isCreating, setIsCreating] = useState(false);
   return (
     <div className="app">
       <BrowserRouter>
@@ -33,8 +39,12 @@ export default function App() {
                   error={error}
                   setError={setError}
                   isloading={isloading}
-                  setIsloading={setIsloading}
+                  setIsLoading={setIsLoading}
                   filterInputValue={filterInputValue}
+                  newTransactionForm={newTransactionForm}
+                  setNewTransactionForm={setNewTransactionForm}
+                  isCreating={isCreating}
+                  setIsCreating={setIsCreating}
                 />
               }
             />

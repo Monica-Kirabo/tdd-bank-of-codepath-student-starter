@@ -4,7 +4,7 @@ import codepath from "../../assets/codepath.svg";
 import avatar from "../../assets/avatar.png";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import { PinDropSharp } from "@material-ui/icons";
+//import { PinDropSharp } from "@material-ui/icons";
 
 export default function Navbar(props) {
   function handleOnInputChange(change) {
