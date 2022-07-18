@@ -1,4 +1,6 @@
 
+
+
 import * as React from "react";
 import "./AddTransaction.css";
 import { axios } from "axios";
@@ -19,6 +21,7 @@ export default function AddTransaction(props) {
         handleOnSubmit={props.handleOnSubmit}
         handleOnFormFieldChange={handleOnFormFieldChange}
         form={props.form}
+        setIsCreating={props.setIsCreating}
       />
     </div>
   );
@@ -68,44 +71,113 @@ export function AddTransactionForm(props) {
   );
 }
 
+// import * as React from "react";
+// import "./AddTransaction.css";
+// import { axios } from "axios";
 
+// export default function AddTransaction(props) {
+//   const handleOnFormFieldChange = (change) => {
+//     //implement
+//     var tar = change.target;
+//     props.setForm({ ...props.form, [tar.name]: tar.value });
+//   };
 
-
-
-// import * as React from "react"
-// import "./AddTransaction.css"
-
-// export default function AddTransaction() {
 //   return (
 //     <div className="add-transaction">
 //       <h2>Add Transaction</h2>
 
-//       <AddTransactionForm />
+//       <AddTransactionForm
+//         isCreating={props.isCreating}
+//         handleOnSubmit={props.handleOnSubmit}
+//         handleOnFormFieldChange={handleOnFormFieldChange}
+//         form={props.form}
+//       />
 //     </div>
-//   )
+//   );
 // }
 
-// export function AddTransactionForm() {
+// export function AddTransactionForm(props) {
 //   return (
 //     <div className="form">
 //       <div className="fields">
 //         <div className="field">
 //           <label>Description</label>
-//           <input />
+//           <input
+//             name="description"
+//             onChange={props.handleOnFormFieldChange}
+//             type="text"
+//             value={props.form ? props.form.description : ""}
+//           />
 //         </div>
 //         <div className="field">
 //           <label>Category</label>
-//           <input />
+//           <input
+//             name="category"
+//             onChange={props.handleOnFormFieldChange}
+//             type="text"
+//             value={props.form ? props.form.category : ""}
+//           />
 //         </div>
 //         <div className="field half-flex">
 //           <label>Amount (cents)</label>
-//           <input />
+//           <input
+//             name="amount"
+//             onChange={props.handleOnFormFieldChange}
+//             type="number"
+//             value={props.form ? props.form.amount : 0}
+//           />
 //         </div>
 
-//         <button className="btn add-transaction" type="submit">
+//         <button
+//           className="btn add-transaction"
+//           type="submit"
+//           onClick={props.handleOnSubmit}
+//         >
 //           Add
 //         </button>
 //       </div>
 //     </div>
-//   )
+//   );
 // }
+
+
+
+
+
+// // import * as React from "react"
+// // import "./AddTransaction.css"
+
+// // export default function AddTransaction() {
+// //   return (
+// //     <div className="add-transaction">
+// //       <h2>Add Transaction</h2>
+
+// //       <AddTransactionForm />
+// //     </div>
+// //   )
+// // }
+
+// // export function AddTransactionForm() {
+// //   return (
+// //     <div className="form">
+// //       <div className="fields">
+// //         <div className="field">
+// //           <label>Description</label>
+// //           <input />
+// //         </div>
+// //         <div className="field">
+// //           <label>Category</label>
+// //           <input />
+// //         </div>
+// //         <div className="field half-flex">
+// //           <label>Amount (cents)</label>
+// //           <input />
+// //         </div>
+
+// //         <button className="btn add-transaction" type="submit">
+// //           Add
+// //         </button>
+// //       </div>
+// //     </div>
+// //   )
+// // }
