@@ -1,6 +1,4 @@
 
-
-
 import * as React from "react";
 import AddTransaction from "../AddTransaction/AddTransaction";
 import BankActivity from "../BankActivity/BankActivity";
